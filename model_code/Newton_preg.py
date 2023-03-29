@@ -246,65 +246,29 @@ def newton_preg_rat(func,x,k,cell):
                             else:
                                 amp = 0.3
                         else:
-                            if cell.inhib == 'ENaC-70':
-                                amp = 1.0
-                            else:
-                                amp = 0.275
+                            amp = 0.275
                     elif cell.type == 'jux2':
                         if cell.HT != 'N':
                             amp = 0.25
-                        elif cell.inhib == 'HKA-100':
-                            if k==0:
-                                amp = 1.0
-                            else:
-                                amp = 1.0
                         else:
                             amp = 0.3
                     elif cell.type == 'jux3':
                         if k==0:
-                            amp = 1.0 #0.5
+                            amp = 0.5
                         else:
                             amp = 0.25
                     elif cell.type == 'jux4':
-                        if k==0:
-                            if cell.preg == 'mid':
-                                if cell.inhib == 'ENaC-100':
-                                    amp = 0.5
-                                else:
-                                    amp = 1.0
-                            else:
-                                amp = 0.25
-                        else:
-                            amp = 0.25 #0.277
+                        amp = 0.25 #0.277
                     elif cell.type == 'jux5':
                         if k==0:
-                            if cell.inhib == 'HKA-100preg':
-                                amp = 0.5
-                            elif cell.inhib == 'ENaC-100':
-                                amp = 0.6
-                            else:
-                                amp = 1.0 #0.4
+                            amp = 1.0 #0.4
                         else:
                             amp = 0.25 #0.5
-                    elif cell.type == 'sup':
-                        if k==0:
-                            if cell.inhib == 'HKA-100':
-                                amp = 0.8 #0.5
-                            else:
-                                amp = 1.0
-                        else:
-                            amp = 1.0
                     else:
                         amp = 0.5
                 elif cell.preg == 'late':
                     if cell.type == 'jux1':
-                        if k==0:
-                            if cell.inhib == 'ENaC-100':
-                                amp = 1.0
-                            else:
-                                amp = 0.45
-                        else:
-                            amp = 0.45
+                        amp = 0.45
                     elif cell.type == 'jux2':
                         amp = 0.4
                     elif cell.type == 'jux3':
@@ -320,10 +284,7 @@ def newton_preg_rat(func,x,k,cell):
                     amp = 0.85
             elif np.linalg.norm(f)>1000:
                 if cell.preg == 'mid':
-                    if k==0:
-                        amp = 0.5
-                    else:
-                        amp = 0.9 #1.0 #0.8
+                    amp = 0.9 #1.0 #0.8
                 elif cell.preg == 'late':
                     amp = 0.9
             elif np.linalg.norm(f)>150:
@@ -406,28 +367,15 @@ def newton_preg_rat(func,x,k,cell):
         # OMCD
         elif cell.segment == 'OMCD':
             if np.linalg.norm(f)>1e6:
-                if cell.inhib == 'HKA-100preg':
-                    amp = 0.55 #1.0
-                elif cell.inhib == 'ENaC-100':
-                    amp = 0.6 #1.0
-                else:
-                    amp = 0.4
+                amp = 0.4
             elif np.linalg.norm(f)>5000:
                 if k==0:
-                    if cell.inhib == 'HKA-100preg':
-                        amp = 0.75 #0.55 #0.3 #1.0
-                    elif cell.inhib == 'ENaC-100':
-                        amp = 1.0
-                    else:
-                        amp = 0.75
+                    amp = 0.75
                 else:
                     amp = 1.0
             elif np.linalg.norm(f)>1000:
                 if k==0:
-                    if cell.inhib == 'HKA-100preg':
-                        amp = 1.0
-                    else:
-                        amp = 0.75
+                    amp = 0.75
                 else:
                     amp = 1.0
             elif np.linalg.norm(f)>100:
