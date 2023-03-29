@@ -34,11 +34,11 @@ direct6 = 'ENaC70-LP'
 sex6 = 'latepregnant'
 
 
-label1 = 'virgin'
+label1 = 'Baseline virgin'
 label2 = 'ENaC 70% inhibition virgin'
-label3 = 'MP'
+label3 = 'Baseline MP'
 label4 = 'ENaC 70% inhibition MP'
-label5 = 'LP'
+label5 = 'Baseline LP'
 label6 = 'ENaC 70% inhibition LP'
 
 
@@ -346,9 +346,9 @@ def get_data6(solute):
 c1 = 'c'
 c2 = 'lightcyan'
 c3 = 'mediumvioletred'
-c4 = 'palevioletred'
+c4 = 'lightpink'
 c5 = 'green'
-c6 = 'springgreen'
+c6 = 'lightgreen'
 juxc = 'white'
 al = 0.4
 
@@ -360,11 +360,13 @@ xlab_size=20
 in_xlab_size=16
 
 # figure specs
-figlab_shift = -1.5
+figlab_shift = -1.0
 width = 0.1
 
 
-fig = plt.figure(figsize = (20,20))
+figheight = 15
+figwidth  = 10
+fig = plt.figure(figsize = (figwidth,figheight))
 plt.rcParams.update({'font.size':20})
 
 
@@ -405,7 +407,7 @@ jux5 = ax1.bar(full_pos+3*width, vals5[1], width, bottom = vals5[0], align = 'ce
 sup6 = ax1.bar(full_pos+4*width, vals6[0], width, align = 'center', edgecolor = 'k', color = c6, label = label6)
 jux6 = ax1.bar(full_pos+4*width, vals6[1], width, bottom = vals6[0], align = 'center', edgecolor = 'k', color = 'white')
 
-
+plt.axhline(0, color = 'k')
 ax1.set_xticks(x)
 ax1.set_ylabel('Na$^+$ transport ($\mu$mol/min)', fontsize=ylab_size)
 ax1.set_xticklabels(xlabels, fontsize=xlab_size)
@@ -443,11 +445,13 @@ jux5 = ax2.bar(full_pos+3*width, vals5[1], width, bottom = vals5[0], align = 'ce
 sup6 = ax2.bar(full_pos+4*width, vals6[0], width, align = 'center', edgecolor = 'k', color = c6, label = label6)
 jux6 = ax2.bar(full_pos+4*width, vals6[1], width, bottom = vals6[0], align = 'center', edgecolor = 'k', color = 'white')
 
-
+plt.axhline(0, color = 'k')
 ax2.set_xticks(x)
+ax2.set_yticks([-0.5, 0.0, 0.5, 1.0, 1.5])
 ax2.set_ylabel('K$^+$ transport ($\mu$mol/min)', fontsize=ylab_size)
 ax2.set_xticklabels(xlabels, fontsize=xlab_size)
-#ax2.legend(fontsize=leg_size)
+ax2.legend(fontsize=leg_size)
+ax2.set_ylim(-0.5,1.5)
 ax2.text(figlab_shift, ax2.get_ylim()[1], 'B', size=fig_lab_size, weight='bold')
 
 
