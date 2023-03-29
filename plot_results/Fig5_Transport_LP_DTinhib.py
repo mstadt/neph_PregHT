@@ -429,43 +429,43 @@ ax1 = fig.add_subplot(3,2,1)
 
 # bar1
 sup1 = ax1.bar(full_pos-width, vals1[0], width, align = 'center', edgecolor = 'k', color = c1, label = label1)
-jux1 = ax1.bar(full_pos-width, vals1[1], width, bottom = vals1[0], align = 'center', edgecolor = 'k', color = c1, alpha = al)
+jux1 = ax1.bar(full_pos-width, vals1[1], width, bottom = vals1[0], align = 'center', edgecolor = 'k', color = 'white')
 # bar2
 sup2 = ax1.bar(full_pos, vals2[0], width, align = 'center', edgecolor = 'k', color = c2, label = label2)
-jux2 = ax1.bar(full_pos, vals2[1], width, bottom = vals2[0], align = 'center', edgecolor = 'k', color = c2, alpha = al)
+jux2 = ax1.bar(full_pos, vals2[1], width, bottom = vals2[0], align = 'center', edgecolor = 'k', color = 'white')
 
 if compare>2:
     # bar 3
     sup3 = ax1.bar(full_pos+width, vals3[0], width, align = 'center', edgecolor = 'k', color = c3, label = label3)
-    jux3 = ax1.bar(full_pos+width, vals3[1], width, bottom = vals3[0], align = 'center', edgecolor = 'k', color = c3, alpha = al)
+    jux3 = ax1.bar(full_pos+width, vals3[1], width, bottom = vals3[0], align = 'center', edgecolor = 'k', color = 'white')
     if compare >3:
         # bar 4
         sup4 = ax1.bar(full_pos+ 2*width, vals4[0], width, align = 'center', edgecolor = 'k', color = c4, label = label4)
-        jux4 = ax1.bar(full_pos+ 2*width, vals4[1], width, bottom = vals4[0], align = 'center', edgecolor = 'k', color = c4, alpha = al)
+        jux4 = ax1.bar(full_pos+ 2*width, vals4[1], width, bottom = vals4[0], align = 'center', edgecolor = 'k', color = 'white')
 plt.axhline(0, color = 'k')
 # inset
 axins1 = inset_axes(ax1, width="35%", height = 1.0, loc = 5)
 axins1.bar(full_pos-width, vals1[0], width, color = c1, edgecolor = 'k')
-axins1.bar(full_pos-width, vals1[1], width, bottom = vals1[0], color = c1, alpha = al, edgecolor = 'k')
+axins1.bar(full_pos-width, vals1[1], width, bottom = vals1[0], color ='white', edgecolor = 'k')
 axins1.bar(full_pos, vals2[0], width, color = c2, edgecolor = 'k')
-axins1.bar(full_pos, vals2[1], width, bottom = vals2[0], color = c2, alpha = al, edgecolor = 'k')
+axins1.bar(full_pos, vals2[1], width, bottom = vals2[0], color = 'white', edgecolor = 'k')
 if compare>2:
     axins1.bar(full_pos+width, vals3[0], width, color = c3, edgecolor = 'k')
-    axins1.bar(full_pos+width, vals3[1], width, bottom = vals3[0], color = c3, alpha = al, edgecolor = 'k')
+    axins1.bar(full_pos+width, vals3[1], width, bottom = vals3[0], color = 'white', edgecolor = 'k')
     if compare > 3:
         axins1.bar(full_pos+ 2*width, vals4[0], width, color = c4, edgecolor = 'k')
-        axins1.bar(full_pos+ 2*width, vals4[1], width, bottom = vals4[0], color = c4, alpha = al, edgecolor = 'k')
+        axins1.bar(full_pos+ 2*width, vals4[1], width, bottom = vals4[0], color = 'white', edgecolor = 'k')
 axins1.set_xticks([4,5,6])
 axins1.set_xticklabels(['DCT', 'CNT', 'CD'], fontsize=in_xlab_size)
 x1 = 4 - 0.5 #CNT index
 x2 = 6 + 0.75#urine index
 y1 = -1
-y2 = 9
+y2 = 5
 axins1.set_xlim(x1,x2)
 axins1.set_ylim(y1,y2)
 axins1.axhline(0,color='k')
 
-ax1.set_xticks(x+0.5*width)
+ax1.set_xticks(x)
 ax1.set_ylabel('Na$^+$ transport ($\mu$mol/min)', fontsize=ylab_size)
 ax1.set_xticklabels(segment_transport, fontsize=xlab_size)
 ax1.legend(fontsize=leg_size)
@@ -486,42 +486,42 @@ ax2 = fig.add_subplot(3,2,2)
 
 # bar1
 sup1 = ax2.bar(full_pos-width, vals1[0], width, align = 'center', edgecolor = 'k', color = c1, label = label1)
-jux1 = ax2.bar(full_pos-width, vals1[1], width, bottom = vals1[0], align = 'center', edgecolor = 'k', color = c1, alpha = al)
+jux1 = ax2.bar(full_pos-width, vals1[1], width, bottom = vals1[0], align = 'center', edgecolor = 'k', color = 'white')
 # bar2
 sup2 = ax2.bar(full_pos, vals2[0], width, align = 'center', edgecolor = 'k', color = c2, label = label2)
-jux2 = ax2.bar(full_pos, vals2[1], width, bottom = vals2[0], align = 'center', edgecolor = 'k', color = c2, alpha = al)
+jux2 = ax2.bar(full_pos, vals2[1], width, bottom = vals2[0], align = 'center', edgecolor = 'k', color = 'white')
 if compare > 2:
     # bar 3
     sup3 = ax2.bar(full_pos+width, vals3[0], width, align = 'center', edgecolor = 'k', color = c3, label = label3)
-    jux3 = ax2.bar(full_pos+width, vals3[1], width, bottom = vals3[0], align = 'center', edgecolor = 'k', color = c3, alpha = al)
+    jux3 = ax2.bar(full_pos+width, vals3[1], width, bottom = vals3[0], align = 'center', edgecolor = 'k', color = 'white')
     if compare > 3:
         # bar 4
         sup4 = ax2.bar(full_pos+ 2*width, vals4[0], width, align = 'center', edgecolor = 'k', color = c4, label = label4)
-        jux4 = ax2.bar(full_pos+ 2*width, vals4[1], width, bottom = vals4[0], align = 'center', edgecolor = 'k', color = c4, alpha = al)
+        jux4 = ax2.bar(full_pos+ 2*width, vals4[1], width, bottom = vals4[0], align = 'center', edgecolor = 'k', color = 'white')
 plt.axhline(0, color = 'k')
 # inset
 axins2 = inset_axes(ax2, width="30%", height = 1.1, loc='upper right')
 axins2.bar(full_pos-width, vals1[0], width, color = c1, edgecolor = 'k')
-axins2.bar(full_pos-width, vals1[1], width, bottom = vals1[0], color = c1, alpha = al, edgecolor = 'k')
+axins2.bar(full_pos-width, vals1[1], width, bottom = vals1[0], color = 'white', edgecolor = 'k')
 axins2.bar(full_pos, vals2[0], width, color = c2, edgecolor = 'k')
-axins2.bar(full_pos, vals2[1], width, bottom = vals2[0], color = c2, alpha = al, edgecolor = 'k')
+axins2.bar(full_pos, vals2[1], width, bottom = vals2[0], color = 'white', edgecolor = 'k')
 if compare > 2:
     axins2.bar(full_pos+width, vals3[0], width, color = c3, edgecolor = 'k')
-    axins2.bar(full_pos+width, vals3[1], width, bottom = vals3[0], color = c3, alpha = al, edgecolor = 'k')
+    axins2.bar(full_pos+width, vals3[1], width, bottom = vals3[0], color = 'white', edgecolor = 'k')
     if compare > 3:
         axins2.bar(full_pos+ 2*width, vals4[0], width, color = c4, edgecolor = 'k')
-        axins2.bar(full_pos+ 2*width, vals4[1], width, bottom = vals4[0], color = c4, alpha = al, edgecolor = 'k')
+        axins2.bar(full_pos+ 2*width, vals4[1], width, bottom = vals4[0], color = 'white', edgecolor = 'k')
 axins2.set_xticks([4,5,6])
 axins2.set_xticklabels(['DCT', 'CNT', 'CD'], fontsize=in_xlab_size)
 x1 = 4 - 0.5 #CNT index
 x2 = 6 + 0.75#urine index
-y1 = -5.0
-y2 = 2.0
+y1 = -0.5
+y2 = 0.1
 axins2.set_xlim(x1,x2)
 axins2.set_ylim(y1,y2)
 axins2.axhline(0,color='k')
 
-ax2.set_xticks(x+0.5*width)
+ax2.set_xticks(x)
 ax2.set_ylabel('K$^+$ transport ($\mu$mol/min)', fontsize=ylab_size)
 ax2.set_xticklabels(segment_transport, fontsize=xlab_size)
 #ax2.legend(fontsize=leg_size)
@@ -542,42 +542,42 @@ ax3 = fig.add_subplot(3,2,3)
 
 # bar1
 sup1 = ax3.bar(full_pos-width, vals1[0], width, align = 'center', edgecolor = 'k', color = c1, label = label1)
-jux1 = ax3.bar(full_pos-width, vals1[1], width, bottom = vals1[0], align = 'center', edgecolor = 'k', color = c1, alpha = al)
+jux1 = ax3.bar(full_pos-width, vals1[1], width, bottom = vals1[0], align = 'center', edgecolor = 'k', color = 'white')
 # bar2
 sup2 = ax3.bar(full_pos, vals2[0], width, align = 'center', edgecolor = 'k', color = c2, label = label2)
-jux2 = ax3.bar(full_pos, vals2[1], width, bottom = vals2[0], align = 'center', edgecolor = 'k', color = c2, alpha = al)
+jux2 = ax3.bar(full_pos, vals2[1], width, bottom = vals2[0], align = 'center', edgecolor = 'k', color = 'white')
 if compare > 2:
     # bar 3
     sup3 = ax3.bar(full_pos+width, vals3[0], width, align = 'center', edgecolor = 'k', color = c3, label = label3)
-    jux3 = ax3.bar(full_pos+width, vals3[1], width, bottom = vals3[0], align = 'center', edgecolor = 'k', color = c3, alpha = al)
+    jux3 = ax3.bar(full_pos+width, vals3[1], width, bottom = vals3[0], align = 'center', edgecolor = 'k', color ='white')
     if compare > 3:
         # bar 4
         sup4 = ax3.bar(full_pos+ 2*width, vals4[0], width, align = 'center', edgecolor = 'k', color = c4, label = label4)
-        jux4 = ax3.bar(full_pos+ 2*width, vals4[1], width, bottom = vals4[0], align = 'center', edgecolor = 'k', color = c4, alpha = al)
+        jux4 = ax3.bar(full_pos+ 2*width, vals4[1], width, bottom = vals4[0], align = 'center', edgecolor = 'k', color = 'white')
 plt.axhline(0, color = 'k')
 # inset
 axins3 = inset_axes(ax3, width="35%", height = 1.3, loc=5)
 axins3.bar(full_pos-width, vals1[0], width, color = c1, edgecolor = 'k')
-axins3.bar(full_pos-width, vals1[1], width, bottom = vals1[0], color = c1, alpha = al, edgecolor = 'k')
+axins3.bar(full_pos-width, vals1[1], width, bottom = vals1[0], color = 'white', edgecolor = 'k')
 axins3.bar(full_pos, vals2[0], width, color = c2, edgecolor = 'k')
-axins3.bar(full_pos, vals2[1], width, bottom = vals2[0], color = c2, alpha = al, edgecolor = 'k')
+axins3.bar(full_pos, vals2[1], width, bottom = vals2[0], color = 'white', edgecolor = 'k')
 if compare > 2:
     axins3.bar(full_pos+width, vals3[0], width, color = c3, edgecolor = 'k')
-    axins3.bar(full_pos+width, vals3[1], width, bottom = vals3[0], color = c3, alpha = al, edgecolor = 'k')
+    axins3.bar(full_pos+width, vals3[1], width, bottom = vals3[0], color = 'white', edgecolor = 'k')
     if compare > 3:
         axins3.bar(full_pos+ 2*width, vals4[0], width, color = c4, edgecolor = 'k')
-        axins3.bar(full_pos+ 2*width, vals4[1], width, bottom = vals4[0], color = c4, alpha = al, edgecolor = 'k')
+        axins3.bar(full_pos+ 2*width, vals4[1], width, bottom = vals4[0], color ='white', edgecolor = 'k')
 axins3.set_xticks([4,5,6])
 axins3.set_xticklabels(['DCT', 'CNT', 'CD'], fontsize=in_xlab_size)
 x1 = 4 - 0.5 #CNT index
 x2 = 6 + 0.75#urine index
 y1 = -1
-y2 = 6
+y2 = 5
 axins3.set_xlim(x1,x2)
 axins3.set_ylim(y1,y2)
 axins3.axhline(0,color='k')
 
-ax3.set_xticks(x+0.5*width)
+ax3.set_xticks(x)
 ax3.set_ylabel('Cl$^-$ transport ($\mu$mol/min)', fontsize=ylab_size)
 ax3.set_xticklabels(segment_transport, fontsize=xlab_size)
 #ax3.legend(fontsize=leg_size)
@@ -598,21 +598,21 @@ ax4 = fig.add_subplot(3,2,4)
 
 # bar1
 sup1 = ax4.bar(full_pos-width, vals1[0], width, align = 'center', edgecolor = 'k', color = c1, label = label1)
-jux1 = ax4.bar(full_pos-width, vals1[1], width, bottom = vals1[0], align = 'center', edgecolor = 'k', color = c1, alpha = al)
+jux1 = ax4.bar(full_pos-width, vals1[1], width, bottom = vals1[0], align = 'center', edgecolor = 'k', color ='white')
 # bar2
 sup2 = ax4.bar(full_pos, vals2[0], width, align = 'center', edgecolor = 'k', color = c2, label = label2)
-jux2 = ax4.bar(full_pos, vals2[1], width, bottom = vals2[0], align = 'center', edgecolor = 'k', color = c2, alpha = al)
+jux2 = ax4.bar(full_pos, vals2[1], width, bottom = vals2[0], align = 'center', edgecolor = 'k', color ='white')
 if compare>2:
     # bar 3
     sup3 = ax4.bar(full_pos+width, vals3[0], width, align = 'center', edgecolor = 'k', color = c3, label = label3)
-    jux3 = ax4.bar(full_pos+width, vals3[1], width, bottom = vals3[0], align = 'center', edgecolor = 'k', color = c3, alpha = al)
+    jux3 = ax4.bar(full_pos+width, vals3[1], width, bottom = vals3[0], align = 'center', edgecolor = 'k', color ='white')
     if compare>3:
         # bar 4
         sup4 = ax4.bar(full_pos+ 2*width, vals4[0], width, align = 'center', edgecolor = 'k', color = c4, label = label4)
-        jux4 = ax4.bar(full_pos+ 2*width, vals4[1], width, bottom = vals4[0], align = 'center', edgecolor = 'k', color = c4, alpha = al)
+        jux4 = ax4.bar(full_pos+ 2*width, vals4[1], width, bottom = vals4[0], align = 'center', edgecolor = 'k', color = 'white')
 plt.axhline(0, color = 'k')
 
-ax4.set_xticks(x+0.5*width)
+ax4.set_xticks(x)
 ax4.set_ylabel('NH$_4^+$ transport ($\mu$mol/min)', fontsize=ylab_size)
 ax4.set_xticklabels(segment_transport, fontsize=xlab_size)
 #ax4.legend(fontsize=leg_size)
@@ -633,37 +633,37 @@ ax5 = fig.add_subplot(3,2,5)
 
 # bar1
 sup1 = ax5.bar(full_pos-width, vals1[0], width, align = 'center', edgecolor = 'k', color = c1, label = label1)
-jux1 = ax5.bar(full_pos-width, vals1[1], width, bottom = vals1[0], align = 'center', edgecolor = 'k', color = c1, alpha = al)
+jux1 = ax5.bar(full_pos-width, vals1[1], width, bottom = vals1[0], align = 'center', edgecolor = 'k', color = 'white')
 # bar2
 sup2 = ax5.bar(full_pos, vals2[0], width, align = 'center', edgecolor = 'k', color = c2, label = label2)
-jux2 = ax5.bar(full_pos, vals2[1], width, bottom = vals2[0], align = 'center', edgecolor = 'k', color = c2, alpha = al)
+jux2 = ax5.bar(full_pos, vals2[1], width, bottom = vals2[0], align = 'center', edgecolor = 'k', color ='white')
 if compare>2:
     # bar 3
     sup3 = ax5.bar(full_pos+width, vals3[0], width, align = 'center', edgecolor = 'k', color = c3, label = label3)
-    jux3 = ax5.bar(full_pos+width, vals3[1], width, bottom = vals3[0], align = 'center', edgecolor = 'k', color = c3, alpha = al)
+    jux3 = ax5.bar(full_pos+width, vals3[1], width, bottom = vals3[0], align = 'center', edgecolor = 'k', color = 'white')
     if compare>3:
         # bar 4
         sup4 = ax5.bar(full_pos+ 2*width, vals4[0], width, align = 'center', edgecolor = 'k', color = c4, label = label4)
-        jux4 = ax5.bar(full_pos+ 2*width, vals4[1], width, bottom = vals4[0], align = 'center', edgecolor = 'k', color = c4, alpha = al)
+        jux4 = ax5.bar(full_pos+ 2*width, vals4[1], width, bottom = vals4[0], align = 'center', edgecolor = 'k', color = 'white')
 plt.axhline(0, color = 'k')
 # inset
 axins5 = inset_axes(ax5, width="35%", height = 1.3, loc=5)
 axins5.bar(full_pos-width, vals1[0], width, color = c1, edgecolor = 'k')
-axins5.bar(full_pos-width, vals1[1], width, bottom = vals1[0], color = c1, alpha = al, edgecolor = 'k')
+axins5.bar(full_pos-width, vals1[1], width, bottom = vals1[0], color ='white', edgecolor = 'k')
 axins5.bar(full_pos, vals2[0], width, color = c2, edgecolor = 'k')
-axins5.bar(full_pos, vals2[1], width, bottom = vals2[0], color = c2, alpha = al, edgecolor = 'k')
+axins5.bar(full_pos, vals2[1], width, bottom = vals2[0], color ='white', edgecolor = 'k')
 if compare>2:
     axins5.bar(full_pos+width, vals3[0], width, color = c3, edgecolor = 'k')
-    axins5.bar(full_pos+width, vals3[1], width, bottom = vals3[0], color = c3, alpha = al, edgecolor = 'k')
+    axins5.bar(full_pos+width, vals3[1], width, bottom = vals3[0], color = 'white', edgecolor = 'k')
     if compare>3:
         axins5.bar(full_pos+ 2*width, vals4[0], width, color = c4, edgecolor = 'k')
-        axins5.bar(full_pos+ 2*width, vals4[1], width, bottom = vals4[0], color = c4, alpha = al, edgecolor = 'k')
+        axins5.bar(full_pos+ 2*width, vals4[1], width, bottom = vals4[0], color = 'white', edgecolor = 'k')
 axins5.set_xticks([4,5,6])
 axins5.set_xticklabels(['DCT', 'CNT', 'CD'], fontsize=in_xlab_size)
 x1 = 4 - 0.5 #CNT index
 x2 = 6 + 0.75#urine index
-y1 = -0.2
-y2 = 0.75
+y1 = -0.1
+y2 = 0.35
 axins5.set_xlim(x1,x2)
 axins5.set_ylim(y1,y2)
 axins5.axhline(0,color='k')
@@ -689,31 +689,31 @@ ax6 = fig.add_subplot(3,2,6)
 
 # bar1
 sup1 = ax6.bar(full_pos-width, vals1[0], width, align = 'center', edgecolor = 'k', color = c1, label = label1)
-jux1 = ax6.bar(full_pos-width, vals1[1], width, bottom = vals1[0], align = 'center', edgecolor = 'k', color = c1, alpha = al)
+jux1 = ax6.bar(full_pos-width, vals1[1], width, bottom = vals1[0], align = 'center', edgecolor = 'k', color = 'white')
 # bar2
 sup2 = ax6.bar(full_pos, vals2[0], width, align = 'center', edgecolor = 'k', color = c2, label = label2)
-jux2 = ax6.bar(full_pos, vals2[1], width, bottom = vals2[0], align = 'center', edgecolor = 'k', color = c2, alpha = al)
+jux2 = ax6.bar(full_pos, vals2[1], width, bottom = vals2[0], align = 'center', edgecolor = 'k', color = 'white')
 if compare>2:
     # bar 3
     sup3 = ax6.bar(full_pos+width, vals3[0], width, align = 'center', edgecolor = 'k', color = c3, label = label3)
-    jux3 = ax6.bar(full_pos+width, vals3[1], width, bottom = vals3[0], align = 'center', edgecolor = 'k', color = c3, alpha = al)
+    jux3 = ax6.bar(full_pos+width, vals3[1], width, bottom = vals3[0], align = 'center', edgecolor = 'k', color = 'white')
     if compare>3:
         # bar 4
         sup4 = ax6.bar(full_pos+ 2*width, vals4[0], width, align = 'center', edgecolor = 'k', color = c4, label = label4)
-        jux4 = ax6.bar(full_pos+ 2*width, vals4[1], width, bottom = vals4[0], align = 'center', edgecolor = 'k', color = c4, alpha = al)
+        jux4 = ax6.bar(full_pos+ 2*width, vals4[1], width, bottom = vals4[0], align = 'center', edgecolor = 'k', color = 'white')
 plt.axhline(0, color = 'k')
 # inset
 axins6 = inset_axes(ax6, width="35%", height = 1.3, loc=5)
 axins6.bar(full_pos-width, vals1[0], width, color = c1, edgecolor = 'k')
-axins6.bar(full_pos-width, vals1[1], width, bottom = vals1[0], color = c1, alpha = al, edgecolor = 'k')
+axins6.bar(full_pos-width, vals1[1], width, bottom = vals1[0], color = 'white', edgecolor = 'k')
 axins6.bar(full_pos, vals2[0], width, color = c2, edgecolor = 'k')
-axins6.bar(full_pos, vals2[1], width, bottom = vals2[0], color = c2, alpha = al, edgecolor = 'k')
+axins6.bar(full_pos, vals2[1], width, bottom = vals2[0], color ='white', edgecolor = 'k')
 if compare>2:
     axins6.bar(full_pos+width, vals3[0], width, color = c3, edgecolor = 'k')
-    axins6.bar(full_pos+width, vals3[1], width, bottom = vals3[0], color = c3, alpha = al, edgecolor = 'k')
+    axins6.bar(full_pos+width, vals3[1], width, bottom = vals3[0], color = 'white', edgecolor = 'k')
     if compare>3:
         axins6.bar(full_pos+ 2*width, vals4[0], width, color = c4, edgecolor = 'k')
-        axins6.bar(full_pos+ 2*width, vals4[1], width, bottom = vals4[0], color = c4, alpha = al, edgecolor = 'k')
+        axins6.bar(full_pos+ 2*width, vals4[1], width, bottom = vals4[0], color = 'white', edgecolor = 'k')
 axins6.set_xticks([4,5,6])
 axins6.set_xticklabels(['DCT', 'CNT', 'CD'], fontsize=in_xlab_size)
 x1 = 4 - 0.5 #CNT index
