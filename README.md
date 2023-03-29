@@ -10,8 +10,9 @@ Model code files used to generate simulations. Simulation results given in **plo
 **data_files/** contains data files created from model simulation results
 
 # Instructions for model simulations
-### This is for running simulations using files under **model_code/**. Move model output to directory with files from **plot_results/** to make figures.
-To run the parallel simulation code use command: **python3 parallel_simulate.py --sex [option] --species [option] --type [option] --diabetes [option] --inhibition [option] --pregnant [option] --obese [option]**
+Note: These instructions are for running simulations using files under **model_code/**. Move model output to directory with files from **plot_results/** to make figures.
+
+To run the parallel simulation code use command: **python3 parallel_simulate.py --sex [option] --species [option] --type [option] --diabetes [option] --inhibition [option] --pregnant [option]**
 
 The options here are:
 
