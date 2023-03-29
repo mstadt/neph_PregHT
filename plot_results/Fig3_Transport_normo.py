@@ -500,7 +500,7 @@ if compare > 2:
         jux4 = ax2.bar(full_pos+ 2*width, vals4[1], width, bottom = vals4[0], align = 'center', edgecolor = 'k', color = 'white')
 plt.axhline(0, color = 'k')
 # inset
-axins2 = inset_axes(ax2, width="30%", height = 1.1, loc='upper right')
+axins2 = inset_axes(ax2, width="30%", height = 1.1, loc='center right')
 axins2.bar(full_pos-width, vals1[0], width, color = c1, edgecolor = 'k')
 axins2.bar(full_pos-width, vals1[1], width, bottom = vals1[0], color = 'white', edgecolor = 'k')
 axins2.bar(full_pos, vals2[0], width, color = c2, edgecolor = 'k')
@@ -524,7 +524,7 @@ axins2.axhline(0,color='k')
 ax2.set_xticks(x)
 ax2.set_ylabel('K$^+$ transport ($\mu$mol/min)', fontsize=ylab_size)
 ax2.set_xticklabels(segment_transport, fontsize=xlab_size)
-#ax2.legend(fontsize=leg_size)
+ax2.legend(fontsize=leg_size, loc = 'upper right')
 ax2.text(figlab_shift, ax2.get_ylim()[1], 'B', size=fig_lab_size, weight='bold')
 
 # #------------
@@ -580,7 +580,7 @@ axins3.axhline(0,color='k')
 ax3.set_xticks(x)
 ax3.set_ylabel('Cl$^-$ transport ($\mu$mol/min)', fontsize=ylab_size)
 ax3.set_xticklabels(segment_transport, fontsize=xlab_size)
-#ax3.legend(fontsize=leg_size)
+ax3.legend(fontsize=leg_size)
 ax3.text(figlab_shift, ax3.get_ylim()[1], 'C', size=fig_lab_size, weight='bold')
 
 # #------------
@@ -615,7 +615,7 @@ plt.axhline(0, color = 'k')
 ax4.set_xticks(x)
 ax4.set_ylabel('NH$_4^+$ transport ($\mu$mol/min)', fontsize=ylab_size)
 ax4.set_xticklabels(segment_transport, fontsize=xlab_size)
-#ax4.legend(fontsize=leg_size)
+ax4.legend(fontsize=leg_size, loc = 'lower right')
 ax4.text(figlab_shift, ax4.get_ylim()[1], 'D', size=fig_lab_size, weight='bold')
 
 # #------------
@@ -671,7 +671,7 @@ axins5.axhline(0,color='k')
 ax5.set_xticks(x)
 ax5.set_ylabel('HCO$_3^-$ transport ($\mu$mol/min)', fontsize=ylab_size)
 ax5.set_xticklabels(segment_transport, fontsize=xlab_size)
-#ax5.legend(fontsize=leg_size)
+ax5.legend(fontsize=leg_size)
 ax5.text(figlab_shift, ax5.get_ylim()[1], 'E', size=fig_lab_size, weight='bold')
 
 # #------------
@@ -727,7 +727,7 @@ axins6.axhline(0,color='k')
 ax6.set_xticks(x)
 ax6.set_ylabel('Volume transport (ml/min)', fontsize=ylab_size)
 ax6.set_xticklabels(segment_transport, fontsize=xlab_size)
-#ax6.legend(fontsize=leg_size)
+ax6.legend(fontsize=leg_size)
 ax6.text(figlab_shift, ax6.get_ylim()[1], 'F', size=fig_lab_size, weight='bold')
 
 

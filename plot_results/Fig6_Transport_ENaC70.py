@@ -365,7 +365,7 @@ width = 0.1
 
 
 figheight = 15
-figwidth  = 10
+figwidth  = 12
 fig = plt.figure(figsize = (figwidth,figheight))
 plt.rcParams.update({'font.size':20})
 
@@ -393,7 +393,9 @@ jux2 = ax1.bar(full_pos, vals2[1], width, bottom = vals2[0], align = 'center', e
 
 # bar 3
 sup3 = ax1.bar(full_pos+width, vals3[0], width, align = 'center', edgecolor = 'k', color = c3, label = label3)
-jux3 = ax1.bar(full_pos+width, vals3[1], width, bottom = vals3[0], align = 'center', edgecolor = 'k', color = 'white')
+temp = vals3[0]
+temp[1] = 0 
+jux3 = ax1.bar(full_pos+width, vals3[1], width, bottom = temp, align = 'center', edgecolor = 'k', color = 'white')
 
 # bar 4
 sup4 = ax1.bar(full_pos+ 2*width, vals4[0], width, align = 'center', edgecolor = 'k', color = c4, label = label4)
@@ -408,10 +410,11 @@ sup6 = ax1.bar(full_pos+4*width, vals6[0], width, align = 'center', edgecolor = 
 jux6 = ax1.bar(full_pos+4*width, vals6[1], width, bottom = vals6[0], align = 'center', edgecolor = 'k', color = 'white')
 
 plt.axhline(0, color = 'k')
-ax1.set_xticks(x)
+ax1.set_xticks(x+1.5*width)
 ax1.set_ylabel('Na$^+$ transport ($\mu$mol/min)', fontsize=ylab_size)
 ax1.set_xticklabels(xlabels, fontsize=xlab_size)
 ax1.legend(fontsize=leg_size)
+ax1.set_ylim(-2.0,5.3)
 ax1.text(figlab_shift, ax1.get_ylim()[1], 'A', size=fig_lab_size, weight='bold')
 
 # #------------
@@ -446,7 +449,7 @@ sup6 = ax2.bar(full_pos+4*width, vals6[0], width, align = 'center', edgecolor = 
 jux6 = ax2.bar(full_pos+4*width, vals6[1], width, bottom = vals6[0], align = 'center', edgecolor = 'k', color = 'white')
 
 plt.axhline(0, color = 'k')
-ax2.set_xticks(x)
+ax2.set_xticks(x+1.5*width)
 ax2.set_yticks([-0.5, 0.0, 0.5, 1.0, 1.5])
 ax2.set_ylabel('K$^+$ transport ($\mu$mol/min)', fontsize=ylab_size)
 ax2.set_xticklabels(xlabels, fontsize=xlab_size)

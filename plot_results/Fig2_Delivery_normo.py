@@ -329,7 +329,7 @@ axins1.set_ylim(y1,y2)
 ax1.set_xticks(full_pos)
 ax1.set_ylabel('Na$^+$ delivery ($\mu$mol/min)', fontsize=ylab_size)
 ax1.set_xticklabels(seg_labels, fontsize=xlab_size)
-#ax1.legend(fontsize=leg_size)
+ax1.legend(fontsize=leg_size)
 ax1.text(figlab_shift, ax1.get_ylim()[1], 'A', size=fig_lab_size, weight='bold')
 
 #------------
@@ -418,7 +418,7 @@ axins3.set_ylim(y1,y2)
 ax3.set_xticks(full_pos)
 ax3.set_ylabel('Cl$^-$ delivery ($\mu$mol/min)', fontsize=ylab_size)
 ax3.set_xticklabels(seg_labels, fontsize=xlab_size)
-#ax3.legend(fontsize=leg_size)
+ax3.legend(fontsize=leg_size)
 ax3.text(figlab_shift, ax3.get_ylim()[1], 'C', size=fig_lab_size, weight='bold')
 
 # #------------
@@ -453,7 +453,7 @@ if compare > 2:
 ax4.set_xticks(full_pos)
 ax4.set_ylabel('NH$_4^+$ delivery ($\mu$mol/min)', fontsize=ylab_size)
 ax4.set_xticklabels(seg_labels, fontsize=xlab_size)
-#ax4.legend(fontsize=leg_size)
+ax4.legend(fontsize=leg_size)
 ax4.text(figlab_shift, ax4.get_ylim()[1], 'D', size=fig_lab_size, weight='bold')
 
 # #------------
@@ -509,7 +509,7 @@ axins5.set_ylim(y1,y2)
 ax5.set_xticks(full_pos)
 ax5.set_ylabel('HCO$_3^-$ delivery ($\mu$mol/min)', fontsize=ylab_size)
 ax5.set_xticklabels(seg_labels, fontsize=xlab_size)
-#ax5.legend(fontsize=leg_size)
+ax5.legend(fontsize=leg_size)
 ax5.text(figlab_shift, ax5.get_ylim()[1], 'E', size=fig_lab_size, weight='bold')
 
 # #------------
@@ -565,5 +565,5 @@ axins6.set_ylim(y1,y2)
 ax6.set_xticks(full_pos)
 ax6.set_ylabel('Volume delivery (ml/min)', fontsize=ylab_size)
 ax6.set_xticklabels(seg_labels, fontsize=xlab_size)
-#ax6.legend(fontsize=leg_size)
+ax6.legend(fontsize=leg_size)
 ax6.text(figlab_shift, ax6.get_ylim()[1], 'F', size=fig_lab_size, weight='bold')
