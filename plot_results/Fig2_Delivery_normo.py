@@ -17,7 +17,7 @@ seg_labels = ['PT', 'DL', 'mTAL', 'cTAL', 'DCT', 'CNT', 'CCD', 'urine']
 # 8 segments
 
 
-direct1 = 'virgin'
+direct1 = 'NP-baseline2022-04-22'
 sex1 = 'female'
 
 direct2 = 'midpregnant_rat'

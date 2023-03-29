@@ -15,7 +15,7 @@ segment_cd = ['CCD','OMCD','IMCD']
 
 compare = 3 #2, 3, or 4
 
-direct1 = 'virgin'
+direct1 = 'NP-baseline2022-04-22'
 sex1 = 'female'
 
 direct2 = 'midpregnant_rat'

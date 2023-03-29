@@ -13,7 +13,7 @@ segment_early = ['DCT', 'CNT']
 segment_jux = ['SDL', 'LDL', 'LAL']
 segment_cd = ['CCD','OMCD','IMCD']
 
-compare = 6 #2, 3, or 4
+compare = 6 
 
 direct1 = 'virgin'
 sex1 = 'female'
@@ -137,170 +137,31 @@ def get_cd_data(direct, sex, solute, segments):
     trans = trans
     return trans
 
-def get_data2(solute):
-    #segment_transport = ['PT','DL','LAL','TAL','DCT','CNT','CD']
-    sup1, jux1, trans1 = get_trans_data(direct1, sex1, solute, segment_early)
-    sup2, jux2, trans2 = get_trans_data(direct2, sex2, solute, segment_early)
-    
-    dl1 = get_trans_data(direct1, sex1, solute, segment_jux)[1]
-    dl2 = get_trans_data(direct2, sex2, solute, segment_jux)[1]
-    
-    cd1 = get_cd_data(direct1, sex1, solute, segment_cd)
-    cd2 = get_cd_data(direct2, sex2, solute, segment_cd)
-    
-    sup1_final = np.zeros(len(segment_transport))
-    jux1_final = np.zeros(len(segment_transport))
-    sup2_final = np.zeros(len(segment_transport))
-    jux2_final = np.zeros(len(segment_transport))
-    
-    # PT = pct & s3
-    sup1_final[0] = sum(sup1[0:1+1]) 
-    sup2_final[0] = sum(sup2[0:1+1])
-    
-    jux1_final[0] = sum(jux1[0:1+1])
-    jux2_final[0] = sum(jux2[0:1+1])
-    
-    # DL = sdl for sup, sdl + ldl for jux
-    sup1_final[1] = sup1[2]
-    sup2_final[1] = sup2[2]
-    
-    #sdl + ldl
-    jux1_final[1] = sum(dl1[0:1+1])
-    jux2_final[1] = sum(dl2[0:1+1])
-    
-    # LAL
-    jux1_final[2] = dl1[-1]
-    jux2_final[2] = dl2[-1]
-    
-    # TAL = mTAL + cTAL
-    sup1_final[3] = sum(sup1[3:4+1])
-    sup2_final[3] = sum(sup2[3:4+1])
-    
-    jux1_final[3] = sum(jux1[3:4+1])
-    jux2_final[3] = sum(jux2[3:4+1])
-    
-    # DCT, CNT
-    sup1_final[4:5+1] = sup1[5:6+1]
-    sup2_final[4:5+1] = sup2[5:6+1]
-    
-    jux1_final[4:5+1] = jux1[5:6+1]
-    jux2_final[4:5+1] = jux2[5:6+1]
-    
-    # CD = ccd + omcd + imcd
-    sup1_final[-1] = sum(cd1)
-    sup2_final[-1] = sum(cd2)
-    
-    vals1 = np.zeros(2*7).reshape(2,7)
-    vals1[0] = sup1_final
-    vals1[1] = jux1_final
-    
-    vals2 = np.zeros(2*7).reshape(2,7)
-    vals2[0] = sup2_final
-    vals2[1] = jux2_final
-    
-    
-    return vals1, vals2
-
-def get_data3(solute):
-    #segment_transport = ['PT','DL','LAL','TAL','DCT','CNT','CD']
-    sup1, jux1, trans1 = get_trans_data(direct1, sex1, solute, segment_early)
-    sup2, jux2, trans2 = get_trans_data(direct2, sex2, solute, segment_early)
-    sup3, jux3, trans3 = get_trans_data(direct3, sex3, solute, segment_early)
-    
-    dl1 = get_trans_data(direct1, sex1, solute, segment_jux)[1]
-    dl2 = get_trans_data(direct2, sex2, solute, segment_jux)[1]
-    dl3 = get_trans_data(direct3, sex3, solute, segment_jux)[1]
-    
-    cd1 = get_cd_data(direct1, sex1, solute, segment_cd)
-    cd2 = get_cd_data(direct2, sex2, solute, segment_cd)
-    cd3 = get_cd_data(direct3, sex3, solute, segment_cd)
-    
-    sup1_final = np.zeros(len(segment_transport))
-    jux1_final = np.zeros(len(segment_transport))
-    sup2_final = np.zeros(len(segment_transport))
-    jux2_final = np.zeros(len(segment_transport))
-    sup3_final = np.zeros(len(segment_transport))
-    jux3_final = np.zeros(len(segment_transport))
-    
-    # PT = pct & s3
-    sup1_final[0] = sum(sup1[0:1+1]) 
-    sup2_final[0] = sum(sup2[0:1+1])
-    sup3_final[0] = sum(sup3[0:1+1])
-    
-    jux1_final[0] = sum(jux1[0:1+1])
-    jux2_final[0] = sum(jux2[0:1+1])
-    jux3_final[0] = sum(jux3[0:1+1])
-    
-    # DL = sdl for sup, sdl + ldl for jux
-    sup1_final[1] = sup1[2]
-    sup2_final[1] = sup2[2]
-    sup3_final[1] = sup3[2]
-    
-    #sdl + ldl
-    jux1_final[1] = sum(dl1[0:1+1])
-    jux2_final[1] = sum(dl2[0:1+1])
-    jux3_final[1] = sum(dl3[0:1+1])
-    
-    # LAL
-    jux1_final[2] = dl1[-1]
-    jux2_final[2] = dl2[-1]
-    jux3_final[2] = dl3[-1]
-    
-    # TAL = mTAL + cTAL
-    sup1_final[3] = sum(sup1[3:4+1])
-    sup2_final[3] = sum(sup2[3:4+1])
-    sup3_final[3] = sum(sup3[3:4+1])
-    
-    jux1_final[3] = sum(jux1[3:4+1])
-    jux2_final[3] = sum(jux2[3:4+1])
-    jux3_final[3] = sum(jux3[3:4+1])
-    
-    # DCT, CNT
-    sup1_final[4:5+1] = sup1[5:6+1]
-    sup2_final[4:5+1] = sup2[5:6+1]
-    sup3_final[4:5+1] = sup3[5:6+1]
-    
-    jux1_final[4:5+1] = jux1[5:6+1]
-    jux2_final[4:5+1] = jux2[5:6+1]
-    jux3_final[4:5+1] = jux3[5:6+1]
-    
-    # CD = ccd + omcd + imcd
-    sup1_final[-1] = sum(cd1)
-    sup2_final[-1] = sum(cd2)
-    sup3_final[-1] = sum(cd3)
-    
-    vals1 = np.zeros(2*7).reshape(2,7)
-    vals1[0] = sup1_final
-    vals1[1] = jux1_final
-    
-    vals2 = np.zeros(2*7).reshape(2,7)
-    vals2[0] = sup2_final
-    vals2[1] = jux2_final
-    
-    vals3 = np.zeros(2*7).reshape(2,7)
-    vals3[0] = sup3_final
-    vals3[1] = jux3_final
-    
-    
-    return vals1, vals2, vals3
 
 
-def get_data4(solute):
+def get_data6(solute):
     #segment_transport = ['PT','DL','LAL','TAL','DCT','CNT','CD']
     sup1, jux1, trans1 = get_trans_data(direct1, sex1, solute, segment_early)
     sup2, jux2, trans2 = get_trans_data(direct2, sex2, solute, segment_early)
     sup3, jux3, trans3 = get_trans_data(direct3, sex3, solute, segment_early)
     sup4, jux4, trans4 = get_trans_data(direct4, sex4, solute, segment_early)
+    sup5, jux5, trans5 = get_trans_data(direct5, sex5, solute, segment_early)
+    sup6, jux6, trans6 = get_trans_data(direct6, sex6, solute, segment_early)
+    
     
     dl1 = get_trans_data(direct1, sex1, solute, segment_jux)[1]
     dl2 = get_trans_data(direct2, sex2, solute, segment_jux)[1]
     dl3 = get_trans_data(direct3, sex3, solute, segment_jux)[1]
     dl4 = get_trans_data(direct4, sex4, solute, segment_jux)[1]
+    dl5 = get_trans_data(direct5, sex5, solute, segment_jux)[1]
+    dl6 = get_trans_data(direct6, sex6, solute, segment_jux)[1]
     
     cd1 = get_cd_data(direct1, sex1, solute, segment_cd)
     cd2 = get_cd_data(direct2, sex2, solute, segment_cd)
     cd3 = get_cd_data(direct3, sex3, solute, segment_cd)
     cd4 = get_cd_data(direct4, sex4, solute, segment_cd)
+    cd5 = get_cd_data(direct5, sex5, solute, segment_cd)
+    cd6 = get_cd_data(direct6, sex6, solute, segment_cd)
     
     sup1_final = np.zeros(len(segment_transport))
     jux1_final = np.zeros(len(segment_transport))
@@ -310,6 +171,10 @@ def get_data4(solute):
     jux3_final = np.zeros(len(segment_transport))
     sup4_final = np.zeros(len(segment_transport))
     jux4_final = np.zeros(len(segment_transport))
+    sup5_final = np.zeros(len(segment_transport))
+    jux5_final = np.zeros(len(segment_transport))
+    sup6_final = np.zeros(len(segment_transport))
+    jux6_final = np.zeros(len(segment_transport))
     
     # PT = pct & s3
     sup1_final[0] = sum(sup1[0:1+1]) 
