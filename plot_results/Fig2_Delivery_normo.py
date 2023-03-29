@@ -20,10 +20,10 @@ seg_labels = ['PT', 'DL', 'mTAL', 'cTAL', 'DCT', 'CNT', 'CCD', 'urine']
 direct1 = 'virgin'
 sex1 = 'female'
 
-direct2 = 'midpreg'
+direct2 = 'midpregnant_rat'
 sex2 = 'midpregnant'
 
-direct3 = 'latepreg'
+direct3 = 'latepregnant_rat'
 sex3 = 'latepregnant'
 
 direct4 = ''

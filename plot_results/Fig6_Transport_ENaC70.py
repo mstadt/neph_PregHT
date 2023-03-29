@@ -9,28 +9,38 @@ from mpl_toolkits.axes_grid1.inset_locator import inset_axes
 
 solute_list = ['Na', 'K', 'Cl', 'HCO3', 'NH4', 'Volume']
 
-segment_early = ['PT', 'S3', 'SDL', 'mTAL', 'cTAL', 'DCT', 'CNT']
+segment_early = ['DCT', 'CNT']
 segment_jux = ['SDL', 'LDL', 'LAL']
 segment_cd = ['CCD','OMCD','IMCD']
 
-compare = 3 #2, 3, or 4
+compare = 6 #2, 3, or 4
 
-direct1 = 'latepregnant_rat'
-sex1 = 'latepregnant'
+direct1 = 'virgin'
+sex1 = 'female'
 
-direct2 = 'LP-PT'
-sex2 = 'latepregnant'
+direct2 = ''
+sex2 = 'female'
 
-direct3 = 'LP-enac'
-sex3 = 'latepregnant'
+direct3 = 'midpreg'
+sex3 = 'midpregnant'
 
 direct4 = ''
-sex4 = ''
+sex4 = 'midpregnant'
 
-label1 = 'Baseline LP'
-label2 = 'LP PT length at virgin'
-label3 = 'LP NHE3 at virgin'
-label4 = ''
+direct5 = 'latepreg'
+sex5 = 'latepregnant'
+
+direct6 = ''
+sex6 = 'latepregnant'
+
+
+label1 = 'virgin'
+label2 = 'ENaC 70% inhibition virgin'
+label3 = 'MP'
+label4 = 'ENaC 70% inhibition MP'
+label5 = 'LP'
+label6 = 'ENaC 70% inhibition LP'
+
 
 save_tiff = 0 # set to 1 if want to save .tiff file
 humOrrat = 'rat'
@@ -53,7 +63,7 @@ min_per_day = 1440
 sol_conv = mu_conv * min_per_day
 vol_conv = min_per_day
 
-segment_transport = ['PT','DL','LAL','TAL','DCT','CNT','CD']
+segment_transport = ['DCT','CNT','CD']
 
 
 #-----------------------------------------------------------------------
@@ -382,9 +392,11 @@ def get_data4(solute):
 #===============================================================================
 # colors
 c1 = 'c'
-c2 = 'mediumvioletred'
-c3 = 'green'
-c4 = 'purple'
+c2 = ''
+c3 = 'mediumvioletred'
+c4 = ''
+c5 = 'green'
+c6 = ''
 juxc = 'white'
 al = 0.4
 
@@ -397,7 +409,7 @@ in_xlab_size=16
 
 # figure specs
 figlab_shift = -1.5
-width = 0.25
+width = 0.2
 
 
 fig = plt.figure(figsize = (20,20))
