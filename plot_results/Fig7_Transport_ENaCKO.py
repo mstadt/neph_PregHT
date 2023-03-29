@@ -451,7 +451,7 @@ ax2.set_yticks([-0.5, 0.0, 0.5, 1.0, 1.5])
 ax2.set_ylabel('K$^+$ transport ($\mu$mol/min)', fontsize=ylab_size)
 ax2.set_xticklabels(xlabels, fontsize=xlab_size)
 ax2.legend(fontsize=leg_size)
-ax2.set_ylim(-0.5,1.5)
+ax2.set_ylim(-0.5,1.7)
 ax2.text(figlab_shift, ax2.get_ylim()[1], 'B', size=fig_lab_size, weight='bold')
 
 
