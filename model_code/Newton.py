@@ -183,10 +183,7 @@ def newton_rat(func,x,k,cell):
             if np.linalg.norm(f)>1e9:
                 amp = 0.25
             elif np.linalg.norm(f)>1e6:
-                if cell.inhib == 'ENaC-100':
-                    amp = 1.0
-                else:
-                    amp = 0.45
+                amp = 0.45
             elif np.linalg.norm(f)>5000:
                 if cell.type == 'jux2':
                     if k==0:
@@ -213,10 +210,7 @@ def newton_rat(func,x,k,cell):
                         amp = 0.25
                 elif cell.type == 'jux1':
                     if k==0:
-                        if cell.inhib == 'ENaC-100':
-                            amp = 0.5
-                        else:
-                            amp = 1.0
+                        amp = 1.0
                     else:
                         amp = 0.5
                 else:
@@ -282,10 +276,7 @@ def newton_rat(func,x,k,cell):
                 if cell.inhib == 'HKA-100':
                     amp = 0.7 #1.0
                 else:
-                    if cell.sex == 'male':
-                        amp = 0.7
-                    else:
-                        amp = 0.45
+                    amp = 0.45
             elif np.linalg.norm(f)>1e4:
                 if cell.inhib == 'HKA-100':
                     amp = 0.5 #1.0
@@ -296,10 +287,7 @@ def newton_rat(func,x,k,cell):
                     if cell.inhib == 'HKA-100':
                         amp = 1.0
                     else:
-                        if cell.sex == 'male':
-                            amp = 1.0
-                        else:
-                            amp = 0.75
+                        amp = 0.75
                 else:
                     amp = 1.0
             elif np.linalg.norm(f)>1000:
@@ -359,7 +347,7 @@ def newton_rat(func,x,k,cell):
         x-= delta
         f = np.matrix(fun(x,k))
         iter+=1
-        print(iter, np.linalg.norm(f))
+        #print(iter, np.linalg.norm(f))
         TOLpcn = np.max(delta/x)
     return x
     
