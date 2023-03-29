@@ -1,6 +1,6 @@
 # About
 This version of the nephron model was used for the paper 
-[Stadt et al. Effect of pregnancy and hypertension on kidney function in female rats: Modeling and functional implications](https://www.biorxiv.org/content/10.1101/2022.12.15.520674v1.abstract)
+[Stadt et al. Effect of pregnancy and hypertension on kidney function in female rats: Modeling and functional implications, under review](https://www.biorxiv.org/content/10.1101/2022.12.15.520674v1.abstract)
 
 # Directory information
 ### model_code/
