@@ -31,7 +31,7 @@ sex4 = 'latepregnant'
 
 label1 = 'Baseline LP'
 label2 = 'LP ENaC at virgin'
-label3 = 'LP P_K at virgin'
+label3 = 'LP P$_K$ at virgin'
 label4 = 'LP HKATPase at virgin'
 
 
@@ -322,11 +322,11 @@ in_xlab_size=16
 
 # figure specs
 figlab_shift = -1.0
-width = 0.1
+width = 0.2
 
 
 figheight = 15
-figwidth  = 12
+figwidth  = 10
 fig = plt.figure(figsize = (figwidth,figheight))
 plt.rcParams.update({'font.size':20})
 
@@ -364,11 +364,11 @@ jux4 = ax1.bar(full_pos+ 2*width, vals4[1], width, bottom = vals4[0], align = 'c
 
 
 plt.axhline(0, color = 'k')
-ax1.set_xticks(x+1.5*width)
+ax1.set_xticks(x+0.5*width)
 ax1.set_ylabel('Na$^+$ transport ($\mu$mol/min)', fontsize=ylab_size)
 ax1.set_xticklabels(xlabels, fontsize=xlab_size)
 ax1.legend(fontsize=leg_size)
-ax1.set_ylim(-2.0,5.3)
+ax1.set_ylim(-1.0,5.3)
 ax1.text(figlab_shift, ax1.get_ylim()[1], 'A', size=fig_lab_size, weight='bold')
 
 # #------------
@@ -397,12 +397,12 @@ jux4 = ax2.bar(full_pos+ 2*width, vals4[1], width, bottom = vals4[0], align = 'c
 
 
 plt.axhline(0, color = 'k')
-ax2.set_xticks(x+1.5*width)
+ax2.set_xticks(x+0.5*width)
 ax2.set_yticks([-0.5, 0.0, 0.5, 1.0, 1.5])
 ax2.set_ylabel('K$^+$ transport ($\mu$mol/min)', fontsize=ylab_size)
 ax2.set_xticklabels(xlabels, fontsize=xlab_size)
 ax2.legend(fontsize=leg_size)
-ax2.set_ylim(-0.5,1.7)
+ax2.set_ylim(-0.6,1.7)
 ax2.text(figlab_shift, ax2.get_ylim()[1], 'B', size=fig_lab_size, weight='bold')
 
 
