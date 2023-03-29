@@ -26,8 +26,6 @@ diabetes: **Severe, Moderate, Non** (optional, default: Non);
 
 pregnant: **mid, late** (optional, default: non, only for female rat);
 
-obese: **Y, N** (optional, default: N);
-
 inhibition: **ACE, SGLT2, NHE3-50, NHE3-80, NKCC2-70, NKCC2-100, NCC-70, NCC-100, ENaC-70, ENaC-100, SNB-70, SNB-100, HKA-100, HKApreg-100** (optional, default: None).
 
 unx: **N, Y** (optional, default: N)
