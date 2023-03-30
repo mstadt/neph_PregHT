@@ -646,7 +646,8 @@ def read_params_preg(cell,filename,j):
                     elif cell.inhib == 'ENaC-100':
                         preg_rat = preg_rat*(1-1)
                     elif cell.inhib == 'HKA-100preg':
-                        preg_rat = preg_rat*0.5 # HKA2KO mice have lower ENaC activity
+                        base_preg_rat = preg_rat
+                        preg_rat = (base_preg_rat - 1.0)*0.5 + 1.0 #preg_rat*0.5 # HKA2KO mice have lower ENaC activity
                 elif newTransp.type == 'HKATPase':
                     if cell.preg == 'mid':
                         if cell.inhib == 'HKA-100preg':
